@@ -21,22 +21,22 @@ The main goal is to evaluate the registration experience (Individual + Corporate
 
 | Scenario ID | Scenario | Priority | Status | Notes |
 | --- | --- | --- | --- | --- |
-| REG-N01 | Required Fields Validation | P0 | Implemented | Automated in negative suite. |
-| REG-N03 | Email Format Validation | P0 | Implemented | Automated in negative suite. |
-| REG-N04 | Phone Number Validation | P0 | Implemented | Automated in negative suite. |
-| REG-N05 | Password Format Validation | P0 | Implemented | Automated in negative suite. |
 | REG-P01 | Successful Individual Registration | P0 | Blocked | Implemented as `test.fixme` (product defect prevents verification). |
 | REG-P02 | Corporate Registration Entry Points | P0 | Blocked | Implemented as `test.fixme` (corporate flow blocked). |
 | REG-P03 | Language Selection | P0 | Blocked | Implemented as `test.fixme` (language/session corruption). |
-| REG-N02 | Consent Required | P0 | Blocked | Implemented as `test.fixme` (gating issue in current build). |
-| REG-N06 | Submit Button Gating | P0 | Blocked | Implemented as `test.fixme` (submit remains disabled). |
 | REG-P04 | Country Selection Updates Dial Code | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| REG-P05 | Password Visibility Toggle | P2 | Planned | Scenario documented; no dedicated spec yet. |
 | REG-P06 | Tab Switching Stability | P1 | Planned | Scenario documented; no dedicated spec yet. |
 | REG-P07 | Navigation Links | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| REG-N01 | Required Fields Validation | P0 | Implemented | Automated in negative suite. |
+| REG-N02 | Consent Required | P0 | Blocked | Implemented as `test.fixme` (gating issue in current build). |
+| REG-N03 | Email Format Validation | P0 | Implemented | Automated in negative suite. |
+| REG-N04 | Phone Number Validation | P0 | Implemented | Automated in negative suite. |
+| REG-N05 | Password Format Validation | P0 | Implemented | Automated in negative suite. |
+| REG-N06 | Submit Button Gating | P0 | Blocked | Implemented as `test.fixme` (submit remains disabled). |
 | REG-N07 | Duplicate Email Registration | P1 | Planned | Scenario documented; no dedicated spec yet. |
 | REG-N08 | SQL Injection / Script Injection Attempt | P1 | Planned | Scenario documented; no dedicated spec yet. |
 | REG-N09 | Missing/Unavailable Legal/Privacy Links | P1 | Planned | Scenario documented; no dedicated spec yet. |
-| REG-P05 | Password Visibility Toggle | P2 | Planned | Scenario documented; no dedicated spec yet. |
 
 ## Known limitations
 

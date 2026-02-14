@@ -79,23 +79,6 @@
 
 ---
 
-## REG-P05 — Password Visibility Toggle  
-**Priority:** P2 – Nice to Have  
-
-**Goal:** User can toggle password visibility  
-**Preconditions:** Individual tab  
-
-**Data:** Enter password  
-
-**Checks:**
-- Default input type = password
-- Toggle → input becomes visible
-- Toggle again → masked
-- Password value unchanged
-
-**Reason:** UX enhancement; does not block submission.
-
----
 
 ## REG-P06 — Tab Switching Stability  
 **Priority:** P1 – High  
@@ -123,6 +106,24 @@
 - Marketing links load valid content
 
 **Reason:** Impacts trust and onboarding flow but not a hard blocker.
+
+---
+
+## REG-P05 — Password Visibility Toggle  
+**Priority:** P2 – Nice to Have  
+
+**Goal:** User can toggle password visibility  
+**Preconditions:** Individual tab  
+
+**Data:** Enter password  
+
+**Checks:**
+- Default input type = password
+- Toggle → input becomes visible
+- Toggle again → masked
+- Password value unchanged
+
+**Reason:** UX enhancement; does not block submission.
 
 ---
 

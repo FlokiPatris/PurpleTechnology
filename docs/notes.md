@@ -37,9 +37,16 @@
 
 **Saturday 14.02.2026 — 14:00-17:00**
 
-19. Now when I have few running tests I am going to think about all the possible positive and negative test scenarious.
-20. 20 mins I was brainstorming with the and testing everything I could related to the form. I was recordnign my self talking. I did some screenshots and recorded a video. I am now going to work with gen AI. I will provide it the evidence so I can extract my notes regarding all the problems that I have discovered.
+## 🐜 First Task: Analysis & Strategy
+
+19. Now when I have few running tests I am going to think about all the possible positive and negative test scenarios.
+20. 20 mins I was brainstorming and testing everything I could related to the form. I was recordnig my self talking. I did some screenshots and recorded a video. I am now going to work with gen AI. I will provide it the evidence so I can extract my notes regarding all the problems that I have discovered.
 21. Now I am going through the AI generated QA report and seeing duplications. I want the report to be conciese. Refactoring.
 22. Upadted the report to be accurate
-23. Battling a bit with Chat-GPT. Did not follow my insctructions. Had to open new window to clear the context.
-24.
+23. Battling a bit with Chat-GPT. Did not follow my insctructions. Had to open new window for clear context.
+24. Finalized the QA report. I am now satisfied with the findings ordered by severity and with the final layout.
+
+## 🐜 Second Task: Test Scenarios
+25. Chat-GPT helped me with creating the test scenarios based on the report document. I am going to check it now.
+
+

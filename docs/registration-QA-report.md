@@ -30,14 +30,13 @@ Immediate remediation is required before any release.
 1. **Form submission impossible**
    - Submit button remains disabled even when all required fields are correctly filled.
 
-2. **Language selector – 6th option**
+2. **Language selector – 6th 'English' option**
    - Selecting the 6th language breaks the registration page entirely.
    - Recovery requires:
      - Clearing cookies, OR
      - Opening a new private/incognito tab.
 
 3. **Corporate onboarding completely non-functional**
-   - Register Now → 404
    - Open Live Corporate → unreadable symbols / no action
    - Open Demo Corporate → unreadable symbols / no action
 
@@ -45,8 +44,7 @@ Immediate remediation is required before any release.
 
 ## 🔴 CRITICAL
 
-- “Register Now” redirects to **404**
-- Corporate primary CTAs inaccessible (see Blockers)
+- “Register Now” link should be called "Log In". Clicking redirects to **404** 
 
 ---
 
@@ -160,7 +158,12 @@ Immediate remediation is required before any release.
 
 ### CI/CD Test Data Handling
 
-I would generate unique emails and phone numbers using timestamps, CI run IDs, or Faker, store credentials in CI secrets (never in code), and run tests against staging with isolated data to prevent collisions and flaky builds.
+I would generate unique emails and phone numbers using timestamps, CI run IDs, store credentials in CI secrets (never in code), and run tests against staging with isolated data to prevent collisions and flaky builds.
+
+```ts
+const email = `qa+${Date.now()}@purple.cz`;
+const email = `qa+${process.env.CI_RUN_ID}-${process.env.TEST_WORKER_INDEX}@purple.cz`;
+```
 
 ---
 

@@ -48,7 +48,7 @@ const cases: LanguageCase[] = [
 
 test.fixme('REG-P03 — Language Selection Works Correctly', async ({ languageIndividualRegistration: registration }) => {
   // Blocked: Language label 'English' appears in the in every dropdown menu item and 6th english option breaks the session.
-  // Tracking bug (placeholder): https://jira.example.com/browse/REG-1109
+  // Tracking bug: internal ticket REG-1109
 
   for (const c of cases) {
     // Act

@@ -23,7 +23,7 @@
 8. Started working on a TypeScript prompt to help add and refactor code.
 9. Downloaded transcript by The PrimeTime regarding SOLID principles:  
    https://www.youtube.com/watch?v=TT_RLWmIsbY&pp=ygUUdGhlIHByaW1lIHRpbWUgc29saWQ%3D
-10. Pasted Python prompt together with transcript into generative AI model (ChatGPT).
+10. Pasted my testing Python prompt (used for KrakenTrades) together with transcript into generative AI model (ChatGPT).
 11. Made adjustments and activated the prompt to enforce strict coding policy.
 12. Was thinking to implement Field object model but seems it would be an overkill for this showcase. In case of grids where there are columns different columns for each module I would implement this.
 13. Realized the prompt is insuffitient. Testing it with multiple gen AI models (Geminy, ChatGPT)
@@ -36,5 +36,8 @@
 18. Just realized there is no test ID for the form base elm. Have to look in the whole page (Flaky, slower approach)
 
 **Saturday 14.02.2026 — 14:00-17:00**
+
 19. Now when I have few running tests I am going to think about all the possible positive and negative test scenarious.
 20. 20 mins I was brainstorming with the and testing everything I could related to the form. I was recordnign my self talking. I did some screenshots and recorded a video. I am now going to work with gen AI. I will provide it the evidence so I can extract my notes regarding all the problems that I have discovered.
+21. Now I am going through the AI generated QA report and seeing duplications. I want the report to be conciese. Refactoring.
+22. Upadted the report to be accurate

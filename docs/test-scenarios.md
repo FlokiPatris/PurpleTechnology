@@ -1,278 +1,136 @@
-# Test Scenarios — Registration Form
 
-Scope: Individual & Corporate Tabs  
-Style: Jira-like, automation-ready  
-Framework target: Playwright (TypeScript)
+# Registration Form — Test Scenarios (Automation Ready)
 
----
-
-## Legend
-
-- **Automation:** Yes / Blocked / Manual
-- **Tags:** @blocker @critical @validation @language @corporate @links
+Scope: Individual & Corporate Registration  
+Format: Scenario-level (Playwright compatible)
 
 ---
 
-# BLOCKERS
+## REG-S01 — Successful Individual Registration
 
-## REG-B01 — Individual registration cannot be submitted
-**Tags:** @blocker @smoke
-
-**Preconditions**
-- Clean session (no cookies/localStorage)
-- Navigate to /register
-
-**Steps**
-1. Fill First Name with valid value
-2. Fill Last Name with valid value
-3. Fill Email with valid value
-4. Fill Dial Code + Phone Number
-5. Enter strong password
-
-**Expected**
-- Submit button becomes enabled
-- User can submit form
-
-**Actual**
-- Submit button remains disabled
-
-**Automation:** Yes (assert disabled state)
-
+**Goal:** User creates an individual trading account  
+**Preconditions:** Clean session, Individual tab selected  
+**Data:** Valid first name, last name, email, phone, strong password  
+**Checks:**  
+- Submit button enabled  
+- User can click “Start trading”  
+- Success toast or next onboarding step appears  
 
 ---
 
-## REG-B02 — Language selector 6th option breaks page
-**Tags:** @blocker @language
+## REG-S02 — Required Fields Validation
 
-**Preconditions**
-- Clean session
-- Navigate to /register
-
-**Steps**
-1. Open language dropdown
-2. Select 6th "English" option
-
-**Expected**
-- Language changes
-- Page remains usable
-
-**Actual**
-- Page becomes inaccessible
-- Requires cookie clear or private tab
-
-**Automation:** Yes (session corruption regression)
-
+**Goal:** User is guided when mandatory fields are empty  
+**Preconditions:** Individual tab  
+**Data:** Leave First Name, Last Name, Email empty  
+**Checks:**  
+- Required validation shown on all mandatory fields  
+- Submit remains disabled  
 
 ---
 
-## REG-B03 — Corporate onboarding unavailable
-**Tags:** @blocker @corporate
+## REG-S03 — Email Format Validation
 
-**Steps**
-1. Switch to Corporate tab
-2. Click Open Live Corporate
-3. Click Open Demo Corporate
-
-**Expected**
-- Corporate registration flow opens
-
-**Actual**
-- Unreadable symbols / no action
-
-**Automation:** Yes
-
+**Goal:** Prevent invalid email submission  
+**Preconditions:** Individual tab  
+**Data:** invalid-email  
+**Checks:**  
+- Email field shows validation error  
+- Submit disabled  
 
 ---
 
-# CRITICAL
+## REG-S04 — Phone Number Validation
 
-## REG-C01 — "Register Now" redirects to 404
-**Tags:** @critical @links
-
-**Steps**
-1. Click "Already have an account? Register now"
-
-**Expected**
-- Redirect to login
-
-**Actual**
-- 404 page
-
-**Automation:** Yes
-
+**Goal:** Ensure phone fields accept numeric values only  
+**Preconditions:** Individual tab  
+**Data:** Alphabetic phone input  
+**Checks:**  
+- Validation error displayed  
+- Submit disabled  
 
 ---
 
-# HIGH
+## REG-S05 — Password Strength Evaluation
 
-## REG-H01 — Phone / Dial Code swapped + invalid input allowed
-**Tags:** @validation
-
-**Steps**
-1. Enter letters into Phone
-2. Enter long strings into Dial Code
-
-**Expected**
-- Numeric-only enforcement
-- Length limits
-
-**Actual**
-- Letters accepted
-- Unlimited length
-
-**Automation:** Yes
-
+**Goal:** Password strength correctly reflects entered value  
+**Preconditions:** Individual tab  
+**Data:** Weak → Medium → Strong passwords  
+**Checks:**  
+- Strength label updates correctly  
+- Color bar matches strength  
 
 ---
 
-## REG-H02 — Password strength incorrect
-**Tags:** @validation
+## REG-S06 — Country Selection Updates Dial Code
 
-**Steps**
-1. Enter weak password
-2. Enter strong password
-
-**Expected**
-- Weak → Weak
-- Strong → Strong
-
-**Actual**
-- Weak marked Strong
-- Strong marked Weak
-
-**Automation:** Yes
-
+**Goal:** Dial code reflects selected country  
+**Preconditions:** Individual tab  
+**Data:** Change country  
+**Checks:**  
+- Dial code updates automatically  
 
 ---
 
-# MEDIUM
+## REG-S07 — Consent Required
 
-## REG-M01 — First/Last Name DOM mapping incorrect
-**Tags:** @validation
-
-**Expected**
-- data-testid matches visible label
-
-**Actual**
-- firstName / lastName reversed
-
-**Automation:** Yes
-
+**Goal:** User must accept Terms & Privacy  
+**Preconditions:** Individual tab, all fields valid  
+**Data:** Consent unchecked  
+**Checks:**  
+- Submit disabled  
+- After checking consent → submit enabled  
 
 ---
 
-## REG-M02 — No min/max length on name fields
-**Tags:** @validation
+## REG-S08 — Language Selector Persistence
 
-**Steps**
-1. Enter single character
-2. Enter >300 chars
-
-**Expected**
-- Validation errors
-
-**Automation:** Yes
-
+**Goal:** Language selection does not corrupt session  
+**Preconditions:** Clean session  
+**Data:** Change language  
+**Checks:**  
+- Page remains accessible  
+- Session not broken  
 
 ---
 
-## REG-M03 — Email has no max length
-**Tags:** @validation
+## REG-S09 — Corporate Registration Entry Points
 
-**Automation:** Yes
-
-
----
-
-## REG-M04 — Required field inconsistency
-**Tags:** @validation
-
-**Steps**
-1. Leave all fields empty
-2. Trigger validation
-
-**Expected**
-- All required fields show "Required"
-
-**Actual**
-- Phone shows "Invalid format"
-
-**Automation:** Yes
-
+**Goal:** Corporate user can start onboarding  
+**Preconditions:** Corporate tab  
+**Checks:**  
+- Open Live Corporate navigates correctly  
+- Open Demo Corporate navigates correctly  
 
 ---
 
-## REG-M05 — Affiliate code checkbox does nothing
-**Tags:** @ux
+## REG-S10 — Navigation Links
 
-**Automation:** Yes
-
-
----
-
-## REG-M06 — Marketing links unreliable
-**Tags:** @links
-
-- Execution statistics opens unrelated content
-- Live chat claim false
-
-**Automation:** Yes
-
+**Goal:** Supporting links work correctly  
+**Preconditions:** Registration page  
+**Checks:**  
+- Register/Login link works  
+- Marketing links load valid content  
 
 ---
 
-## REG-M07 — Language dropdown labels incorrect
-**Tags:** @language
+## REG-S11 — Field Length Boundaries
 
-- Always shows "English" instead of selected language
-
-**Automation:** Yes
-
-
----
-
-## REG-M08 — Submit button typo
-**Tags:** @ux
-
-- "Start trending" instead of "Start trading"
-
-**Automation:** Yes
-
+**Goal:** Inputs enforce reasonable limits  
+**Preconditions:** Individual tab  
+**Data:** Extremely long name/email  
+**Checks:**  
+- Input restricted or validation shown  
 
 ---
 
-# HAPPY PATH (Currently Blocked)
+## REG-S12 — CI Friendly Registration
 
-## REG-P01 — Successful individual registration
-
-**Status:** Blocked by REG-B01
-
-**Automation:** Pending fix
-
-
----
-
-# DATA STRATEGY (CI/CD)
-
-Email examples:
-
-```ts
-qa+${Date.now()}@example.test
-qa+${process.env.CI_RUN_ID}-${process.env.TEST_WORKER_INDEX}@example.test
-```
-
-Phone:
-
-```ts
-+4207${Date.now().toString().slice(-7)}
-```
-
-Principles:
-
-- Always-new identities
-- Timestamp or CI-based uniqueness
-- No shared accounts
-- Prefer API cleanup if available
+**Goal:** Registration works with generated CI identities  
+**Preconditions:** Test environment  
+**Data:** qa+timestamp@example.test  
+**Checks:**  
+- Registration completes successfully  
 
 ---
 

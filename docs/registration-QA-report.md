@@ -103,6 +103,7 @@ Immediate remediation is required before any release.
 - Shows repeated “English” instead of selected language (e.g., Russian)
 
 ### Submit Button
+
 - Typo: **“Start trending”** instead of **“Start trading”**
 
 ---
@@ -157,6 +158,10 @@ Immediate remediation is required before any release.
 - Password policy definition
 - Marketing content verification
 
+### CI/CD Test Data Handling
+
+I would generate unique emails and phone numbers using timestamps, CI run IDs, or Faker, store credentials in CI secrets (never in code), and run tests against staging with isolated data to prevent collisions and flaky builds.
+
 ---
 
 # Conclusion
@@ -173,5 +178,3 @@ Current impact:
 **Release readiness: FAILED.**
 
 Immediate engineering intervention is required.
-
----

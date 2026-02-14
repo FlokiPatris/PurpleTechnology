@@ -35,7 +35,7 @@
 17. Created 2 tests (emailValidation.spec, register.required.spec)
 18. Just realized there is no test ID for the form base elm. Have to look in the whole page (Flaky, slower approach)
 
-**Saturday 14.02.2026 — 14:00-17:00**
+**Saturday 14.02.2026 — 14:00-20:25**
 
 ## 🐜 First Task: Analysis & Strategy
 
@@ -52,4 +52,13 @@
 27. Adding segments to test scenarios for better readability
 28. Checking with Chat-GPT based on the screenshots if I covered everthing seems some scenarios are still missing. 
 28. Finalized the test scenarios
+
+## 🤖 Third Task: Test Implementation
+29. I activated the TS prompt in chat-GPT. Provided: test scenarios, whole registration page HTML, existing TS code. Will proceed with creating the tests. And prompted: update the repo source code and cover all the CRITICAL scenarios
+30. Refactoring the tests. Applying best testing standarsts. Asking chat-GPT to provide me a command to create all the test cases in terminal (Too lazy to create the test cases one by one)
+31. Distiungishing positive and negative cases
+32. Created TS config to use absolute imports
+33. Updated global timeout for playwright
+34. Created the tests.
+
 

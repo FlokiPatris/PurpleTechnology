@@ -1,17 +1,24 @@
 # Registration Form — Test Scenarios (Automation Ready)
 
-Scope: Individual & Corporate Registration  
-Format: Scenario-level (Playwright compatible)
+**Scope:** Individual & Corporate Registration  
+**Format:** Scenario-level (Playwright compatible)
 
 ---
 
-# 🟢 POSITIVE SCENARIOS — Core User Flows (Happy Path)
+## Priority Legend
 
-Goal: Verify users who provide valid data can successfully proceed.
+- **P0 – Critical (Release Blocker)**
+- **P1 – High (Major Impact)**
+- **P2 – Nice to Have (UX / Enhancement)**
 
 ---
 
-## REG-P01 — Successful Individual Registration
+# POSITIVE SCENARIOS — Core User Flows
+
+---
+
+## REG-P01 — Successful Individual Registration  
+**Priority:** P0 – Critical  
 
 **Goal:** User creates an individual trading account  
 **Preconditions:** Clean session, Individual tab selected  
@@ -22,177 +29,249 @@ Goal: Verify users who provide valid data can successfully proceed.
 - User can click “Start trading”
 - Success toast or next onboarding step appears
 
+**Reason:** Core revenue-generating flow.
+
 ---
 
-## REG-P02 — Corporate Registration Entry Points
+## REG-P02 — Corporate Registration Entry Points  
+**Priority:** P0 – Critical  
 
 **Goal:** Corporate user can start onboarding  
 **Preconditions:** Corporate tab  
+
 **Checks:**
 - Open Live Corporate navigates correctly
 - Open Demo Corporate navigates correctly
 
----
-
-## REG-P03 — Country Selection Updates Dial Code
-
-**Goal:** Dial code reflects selected country  
-**Preconditions:** Individual tab  
-**Data:** Change country  
-**Checks:**
-- Dial code updates automatically
+**Reason:** Corporate clients are currently blocked.
 
 ---
 
-## REG-P04 — Language Selection Works Correctly
+## REG-P03 — Language Selection  
+**Priority:** P0 – Critical  
 
 **Goal:** Dropdown displays correct languages and page switches language  
 **Preconditions:** Registration page loaded  
-**Data:** Select each available language 
+
+**Data:** Select each available language  
+
 **Checks:**
 - Selected language label updates
 - Page content updates to chosen language
 - Session remains intact
 
+**Reason:** 6th 'English' language option currently breaks the page and corrupts session state.
+
 ---
 
-## REG-P05 — Password Visibility Toggle
+## REG-P04 — Country Selection Updates Dial Code  
+**Priority:** P1 – High  
+
+**Goal:** Dial code reflects selected country  
+**Preconditions:** Individual tab  
+
+**Data:** Change country  
+
+**Checks:**
+- Dial code updates automatically
+
+**Reason:** Impacts phone validation and conversion but not a full blocker.
+
+---
+
+## REG-P05 — Password Visibility Toggle  
+**Priority:** P2 – Nice to Have  
 
 **Goal:** User can toggle password visibility  
 **Preconditions:** Individual tab  
+
 **Data:** Enter password  
+
 **Checks:**
 - Default input type = password
 - Toggle → input becomes visible
 - Toggle again → masked
 - Password value unchanged
 
+**Reason:** UX enhancement; does not block submission.
+
 ---
 
-## REG-P06 — Tab Switching Stability
+## REG-P06 — Tab Switching Stability  
+**Priority:** P1 – High  
 
 **Goal:** Switching tabs does not corrupt UI state  
+
 **Checks:**
 - Individual form visible on Individual tab
 - Corporate content visible on Corporate tab
 - No cross-content bleed
 - Page remains usable
 
+**Reason:** UI stability impacts both flows.
+
 ---
 
-## REG-P07 — Navigation Links
+## REG-P07 — Navigation Links  
+**Priority:** P1 – High  
 
 **Goal:** Supporting links work correctly  
 **Preconditions:** Registration page  
+
 **Checks:**
 - Register/Login link works
 - Marketing links load valid content
 
----
-
-# 🔴 NEGATIVE SCENARIOS — Validation & Protection
-
-Goal: Verify system blocks incorrect input and guides user safely.
+**Reason:** Impacts trust and onboarding flow but not a hard blocker.
 
 ---
 
-## REG-N01 — Required Fields Validation
+# NEGATIVE SCENARIOS — Validation & Protection
+
+---
+
+## REG-N01 — Required Fields Validation  
+**Priority:** P0 – Critical  
 
 **Goal:** User is guided when mandatory fields are empty  
-**Preconditions:** Individual tab  
-**Data:** Leave First Name, Last Name, Email empty  
+
 **Checks:**
 - Required validation shown
 - Submit disabled
 
+**Reason:** Fundamental form integrity.
+
 ---
 
-## REG-N02 — Consent Required
+## REG-N02 — Consent Required  
+**Priority:** P0 – Critical  
 
 **Goal:** User must accept Terms & Privacy  
-**Preconditions:** Individual tab, all fields valid  
-**Data:** Consent unchecked  
+
 **Checks:**
-- Submit disabled
-- After checking consent → submit enabled
+- Submit disabled if unchecked
+- Enabled after checking consent
+
+**Reason:** Legal compliance requirement.
 
 ---
 
-## REG-N03 — Email Format Validation
+## REG-N03 — Email Format Validation  
+**Priority:** P0 – Critical  
 
 **Goal:** Prevent invalid email submission  
-**Preconditions:** Individual tab  
-**Data:** invalid-email  
+
 **Checks:**
-- Email validation error
+- Email validation error shown
 - Submit disabled
+
+**Reason:** Core identity validation.
 
 ---
 
-## REG-N04 — Phone Number Validation
+## REG-N04 — Phone Number Validation  
+**Priority:** P0 – Critical  
 
 **Goal:** Phone fields accept numeric values only  
-**Preconditions:** Individual tab  
-**Data:** Alphabetic / special chars  
+
 **Checks:**
-- Validation error
+- Validation error for alphabetic/special chars
 - Submit disabled
+
+**Reason:** Currently broken; core identity field.
 
 ---
 
-## REG-N05 — Password Format Validation
+## REG-N05 — Password Format Validation  
+**Priority:** P0 – Critical  
 
 **Goal:** Password respects format rules  
-**Preconditions:** Individual tab  
+
 **Data:**
 - < 6 chars
 - Leading space
 - Trailing space  
+
 **Checks:**
-- Format error message displayed
+- Format error displayed
 - Submit disabled
 
----
-
-## REG-N06 — Password Strength Evaluation
-
-**Goal:** Password strength reflects entered value  
-**Preconditions:** Individual tab  
-**Data:** Weak → Fair → Strong passwords  
-**Checks:**
-- Strength label updates correctly
-- Color bar matches strength
+**Reason:** Security requirement.
 
 ---
 
-## REG-N07 — Field Length Boundaries
-
-**Goal:** Inputs enforce reasonable limits  
-**Preconditions:** Individual tab  
-**Data:** Extremely long name/email  
-**Checks:**
-- Input restricted or validation shown
-
----
-
-## REG-N08 — Error Message Consistency
-
-**Goal:** Validation errors appear consistently  
-**Preconditions:** Individual tab  
-**Checks:**
-- Field visually marked error
-- Error message visible near field
-- Submit remains disabled
-
----
-
-## REG-N09 — Submit Button Gating
+## REG-N06 — Submit Button Gating  
+**Priority:** P0 – Critical  
 
 **Goal:** Submit enabled only when all validation passes  
+
 **Checks:**
 - Disabled with any invalid/missing field
 - Enabled only when all inputs + consent valid
 
+**Reason:** Currently broken; directly blocks onboarding.
+
 ---
 
-End of scenarios.
+## REG-N07 — Password Strength Evaluation  
+**Priority:** P1 – High  
+
+**Goal:** Password strength reflects entered value  
+
+**Checks:**
+- Strength label updates correctly
+- Color bar matches strength
+
+**Reason:** Security signaling; currently misleading.
+
+---
+
+## REG-N08 — Field Length Boundaries  
+**Priority:** P1 – High  
+
+**Goal:** Inputs enforce reasonable limits  
+
+**Checks:**
+- Excessively long values restricted or validated
+
+**Reason:** Prevents abuse and edge-case failures.
+
+---
+
+## REG-N09 — Error Message Consistency  
+**Priority:** P1 – High  
+
+**Goal:** Validation errors appear consistently  
+
+**Checks:**
+- Field visually marked error
+- Error message near field
+- Submit remains disabled
+
+**Reason:** UX clarity and reduced abandonment.
+
+---
+
+# Priority Summary
+
+## P0 – Critical (Release Blockers)
+- REG-P01
+- REG-P02
+- REG-P04
+- REG-N01
+- REG-N02
+- REG-N03
+- REG-N04
+- REG-N05
+- REG-N09
+
+## P1 – High
+- REG-P03
+- REG-P06
+- REG-P07
+- REG-N06
+- REG-N07
+- REG-N08
+
+## P2 – Nice to Have
+- REG-P05

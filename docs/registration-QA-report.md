@@ -18,6 +18,7 @@ Primary risks:
 - Corporate onboarding is fully blocked
 - Language selector corrupts session state
 - Validation and security indicators are unreliable
+- data-testid html attributes are missing for some base elements and other elements (Slower, flakier tests.)
 
 Immediate remediation is required before any release.
 

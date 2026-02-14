@@ -38,8 +38,6 @@ Severity ranges from **Critical (submission impossible)** to **Medium (UX + vali
 - No minimum length enforced (1 character accepted)
 - No maximum length enforced (unbounded input)
 
-**Severity:** Medium
-
 ### Expected
 
 - Correct field identifiers
@@ -52,7 +50,6 @@ Severity ranges from **Critical (submission impossible)** to **Medium (UX + vali
 
 ### Findings
 
-- Format validation works
 - No max length enforced
 
 **Severity:** Medium
@@ -63,7 +60,6 @@ Severity ranges from **Critical (submission impossible)** to **Medium (UX + vali
 
 ### Findings
 
-- Changing country updates dial code (appears correct)
 - Legal entity text changes per country (Tradit Ltd vs Axiory Global)
 
 **Status:** Unverified business rule
@@ -77,10 +73,9 @@ Severity ranges from **Critical (submission impossible)** to **Medium (UX + vali
 - Fields are swapped:
   - “Phone number” contains `+420`
   - “Dial code” accepts full phone number
+  - Both fields accept letters and unlimited length
 
 **Severity:** High
-
-- Both fields accept letters and unlimited length
 
 ### Expected
 
@@ -94,10 +89,9 @@ Severity ranges from **Critical (submission impossible)** to **Medium (UX + vali
 ### Findings
 
 - Strength meter unreliable:
-  - Weak passwords sometimes marked *Strong*
+  - Weak passwords marked *Strong*
   - Secure passwords marked *Weak*
 - Bar color mismatches label
-- Visibility toggle works
 
 **Severity:** High
 
@@ -140,7 +134,7 @@ Severity ranges from **Critical (submission impossible)** to **Medium (UX + vali
 
 ## Marketing Links
 
-- Execution statistics → error page
+- Execution statistics → photo of a cat
 - Live chat claim is false
 
 **Severity:** Medium
@@ -153,7 +147,7 @@ Corporate onboarding is non-functional.
 
 - Register Now → 404
 - Open Live Corporate → unreadable symbols / no action
-- Open Demo Corporate → no action
+- Open Demo Corporate → unreadable symbols / no action
 
 **Severity:** Critical
 
@@ -163,9 +157,9 @@ Corporate onboarding is non-functional.
 
 - Shows repeated "English"
 - Actual languages mixed
-- One option errors
+- 6th option errors and breaks the registration page
 
-**Severity:** Medium
+**Severity:** Critical
 
 ---
 
@@ -204,17 +198,6 @@ base + worker + runId
 ### Cleanup
 
 Prefer API teardown, otherwise always-new identities.
-
----
-
-# Critical Blockers
-
-1. Form cannot submit
-2. Phone/dial swapped
-3. Password strength broken
-4. Corporate flow dead
-5. Multiple 404s
-6. Inconsistent required validation
 
 ---
 

@@ -50,4 +50,6 @@
 25. Chat-GPT helped me with creating the test scenarios based on the report document. I am going to check it now.
 26. Chat-GPT created the test cases focusing on the actual bugs rather the user / customer needs. Needs refactoring
 27. Adding segments to test scenarios for better readability
+28. Checking with Chat-GPT based on the screenshots if I covered everthing seems some scenarios are still missing. 
+28. Finalized the test scenarios
 

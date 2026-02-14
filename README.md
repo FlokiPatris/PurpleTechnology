@@ -25,9 +25,9 @@ The main goal is to evaluate the registration experience (Individual + Corporate
 | [REG-P02](docs/test-scenarios.md#reg-p02) | Corporate Registration Entry Points | P0 | Blocked | Implemented as `test.fixme` (corporate flow blocked). |
 | [REG-P03](docs/test-scenarios.md#reg-p03) | Language Selection | P0 | Blocked | Implemented as `test.fixme` (language/session corruption). |
 | [REG-P04](docs/test-scenarios.md#reg-p04) | Country Selection Updates Dial Code | P1 | Planned | Scenario documented; no dedicated spec yet. |
-| [REG-P05](docs/test-scenarios.md#reg-p05) | Password Visibility Toggle | P2 | Planned | Scenario documented; no dedicated spec yet. |
-| [REG-P06](docs/test-scenarios.md#reg-p06) | Tab Switching Stability | P1 | Planned | Scenario documented; no dedicated spec yet. |
-| [REG-P07](docs/test-scenarios.md#reg-p07) | Navigation Links | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| [REG-P05](docs/test-scenarios.md#reg-p05) | Tab Switching Stability | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| [REG-P06](docs/test-scenarios.md#reg-p06) | Navigation Links | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| [REG-P07](docs/test-scenarios.md#reg-p07) | Password Visibility Toggle | P2 | Planned | Scenario documented; no dedicated spec yet. |
 | [REG-N01](docs/test-scenarios.md#reg-n01) | Required Fields Validation | P0 | Implemented | Automated in negative suite. |
 | [REG-N02](docs/test-scenarios.md#reg-n02) | Consent Required | P0 | Blocked | Implemented as `test.fixme` (gating issue in current build). |
 | [REG-N03](docs/test-scenarios.md#reg-n03) | Email Format Validation | P0 | Implemented | Automated in negative suite. |

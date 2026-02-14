@@ -84,8 +84,8 @@
 ---
 
 
-<a id="reg-p06"></a>
-## REG-P06 — Tab Switching Stability  
+<a id="reg-p05"></a>
+## REG-P05 — Tab Switching Stability  
 **Priority:** P1 – High  
 
 **Goal:** Switching tabs does not corrupt UI state  
@@ -100,8 +100,8 @@
 
 ---
 
-<a id="reg-p07"></a>
-## REG-P07 — Navigation Links  
+<a id="reg-p06"></a>
+## REG-P06 — Navigation Links  
 **Priority:** P1 – High  
 
 **Goal:** Supporting links work correctly  
@@ -115,8 +115,8 @@
 
 ---
 
-<a id="reg-p05"></a>
-## REG-P05 — Password Visibility Toggle  
+<a id="reg-p07"></a>
+## REG-P07 — Password Visibility Toggle  
 **Priority:** P2 – Nice to Have  
 
 **Goal:** User can toggle password visibility  
@@ -284,11 +284,11 @@
 
 ## P1 – High
 - REG-P04
+- REG-P05
 - REG-P06
-- REG-P07
 - REG-N07
 - REG-N08
 - REG-N09
 
 ## P2 – Nice to Have
-- REG-P05
+- REG-P07

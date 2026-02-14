@@ -38,7 +38,6 @@ The main goal is to evaluate the registration experience (Individual + Corporate
 | [REG-N08](docs/test-scenarios.md#reg-n08) | Field Length Boundaries | P1 | Planned | Scenario documented; no dedicated spec yet. |
 | [REG-N09](docs/test-scenarios.md#reg-n09) | Error Message Consistency | P1 | Planned | Scenario documented; no dedicated spec yet. |
 
-> Note: Table columns are clickable links, but native GitHub Markdown tables are not sortable.
 
 ## Known limitations
 

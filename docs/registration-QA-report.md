@@ -183,24 +183,6 @@ Corporate onboarding is non-functional.
 
 ---
 
-# CI/CD Data Strategy
-
-### Email
-
-Use deterministic generation:
-
-qa+<runId>-<worker>@example.test
-
-### Phone
-
-base + worker + runId
-
-### Cleanup
-
-Prefer API teardown, otherwise always-new identities.
-
----
-
 # Conclusion
 
 Registration is **not production ready**.

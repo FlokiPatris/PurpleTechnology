@@ -46,15 +46,17 @@ Goal: Verify users who provide valid data can successfully proceed.
 
 ---
 
-## REG-P04 — Language Selector Persistence
+## REG-P04 — Language Selection
 
-**Goal:** Language selection does not corrupt session  
-**Preconditions:** Clean session  
-**Data:** Change language  
+**Goal:** User can change application language from the selector  
+**Preconditions:** Registration page loaded  
+**Data:** Select each available language  
 
 **Checks:**  
-- Page remains accessible  
-- Session not broken  
+- Dropdown displays correct list of supported languages  
+- Selected language is reflected in UI labels  
+- Page content updates to chosen language  
+- Registration page remains usable  
 
 ---
 
@@ -66,6 +68,19 @@ Goal: Verify users who provide valid data can successfully proceed.
 **Checks:**  
 - Register/Login link works  
 - Marketing links load valid content  
+
+---
+
+## REG-P06 — Password Visibility Toggle
+
+**Goal:** User can show and hide password input  
+**Preconditions:** Individual tab  
+**Data:** Enter any password  
+
+**Checks:**  
+- Password is masked by default  
+- Clicking visibility icon reveals password  
+- Clicking again hides password  
 
 ---
 

@@ -1,197 +1,175 @@
-# Registration Form QA Report  
-Scope: Individual & Corporate Tabs  
-Role: Manual + Automation QA  
-Environment: Web (Desktop exploratory + Playwright readiness)
+# Registration Form QA Report
+
+**Scope:** Individual & Corporate Tabs  
+**Role:** Manual + Automation QA  
+**Environment:** Web (Desktop exploratory + Playwright readiness)
 
 ---
 
-## Summary
+## Executive Summary
 
-The registration flow contains multiple blocking defects that prevent successful submission and significantly impact usability, validation integrity, and user trust.
+The registration flow is **NOT production ready**.
 
-Primary issues:
+Multiple **BLOCKER** and **CRITICAL** defects prevent successful onboarding, break page state, and undermine validation integrity and user trust.
 
-- Form cannot be submitted even with all fields filled
-- Required-field behavior is inconsistent
-- DOM field mappings are incorrect
-- Password strength logic is unreliable
-- Corporate flow is non-functional
-- Multiple broken links (404 / no-op)
-- Validation rules are weak or missing
-- Language selection is misleading and 6th dropdown menu option breaks the page (Clearing cookies needed)
+Primary risks:
 
-Severity ranges from **Critical (submission impossible)** to **Medium (UX + validation issues)**.
+- Users cannot complete registration
+- Corporate onboarding is fully blocked
+- Language selector corrupts session state
+- Validation and security indicators are unreliable
+
+Immediate remediation is required before any release.
 
 ---
 
-# Individual Tab
+# Severity-Based Findings
 
-## First Name / Last Name
+## 🚫 BLOCKER
 
-### Findings
+1. **Form submission impossible**
+   - Submit button remains disabled even when all required fields are correctly filled.
 
-- DOM mapping is incorrect:
-  - `data-testid="lastName"` contains *First name*
-  - `data-testid="firstName"` contains *Last name*
+2. **Language selector – 6th option**
+   - Selecting the 6th language breaks the registration page entirely.
+   - Recovery requires:
+     - Clearing cookies, OR
+     - Opening a new private/incognito tab.
 
-**Severity:** Medium
-
-- No minimum length enforced (1 character accepted)
-- No maximum length enforced (unbounded input)
-
-### Expected
-
-- Correct field identifiers
-- Minimum length (≥ 2–3 chars)
-- Maximum length (128–256 chars)
+3. **Corporate onboarding completely non-functional**
+   - Register Now → 404
+   - Open Live Corporate → unreadable symbols / no action
+   - Open Demo Corporate → unreadable symbols / no action
 
 ---
 
-## Email
+## 🔴 CRITICAL
 
-### Findings
-
-- No max length enforced
-
-**Severity:** Medium
+- Submit button typo: **“Start trending”** instead of **“Start trading”**
+- “Register Now” redirects to **404**
+- Corporate primary CTAs inaccessible (see Blockers)
 
 ---
 
-## Country of Residence
+## 🟠 HIGH
 
-### Findings
+### Phone Number / Dial Code
 
-- Legal entity text changes per country (Tradit Ltd vs Axiory Global)
-
-**Status:** Unverified business rule
-
----
-
-## Phone Number / Dial Code
-
-### Findings
-
-- Fields are swapped:
+- Fields swapped:
   - “Phone number” contains `+420`
   - “Dial code” accepts full phone number
-  - Both fields accept letters and unlimited length
+- Both fields:
+  - Accept letters
+  - Have unlimited length
+  - No numeric enforcement
 
-**Severity:** High
+### Password Strength Meter
 
-### Expected
-
-- Dial code: numeric, max ~3–4 chars  
-- Phone number: numeric only, ~9–10 digits  
-
----
-
-## Password
-
-### Findings
-
-- Strength meter unreliable:
-  - Weak passwords marked *Strong*
-  - Secure passwords marked *Weak*
-- Bar color mismatches label
-
-**Severity:** High
+- Weak passwords marked **Strong**
+- Secure passwords marked **Weak**
+- Strength label does not match bar color
 
 ---
 
-## Affiliate Code
+## 🟡 MEDIUM
 
-- Checkbox reveals nothing
+### First Name / Last Name
 
-**Severity:** Medium
+- DOM mapping incorrect:
+  - `data-testid="lastName"` contains *First name*
+  - `data-testid="firstName"` contains *Last name*
+- No minimum length enforced (1 character accepted)
+- No maximum length enforced
 
----
+### Email
 
-## Required Field Behavior
+- No maximum length enforced
 
-- Name + email show "Required"
-- Phone fields show "Invalid format" instead
+### Affiliate Code
 
-**Severity:** Medium
+- Checkbox reveals no input or functionality
 
----
+### Required Field Behavior
 
-## Submit Button
+- Name + email show **Required**
+- Phone fields show **Invalid format** instead of **Required**
 
-- Typo: **Start trending**
-- Button stays disabled even with valid data
-- Submission impossible
+### Marketing / UX
 
-**Severity:** Critical
+- Execution statistics link opens unrelated content
+- “Live chat” claim is false
 
----
+### Language Selector
 
-## Register Now
-
-- Redirects to 404
-
-**Severity:** High
-
----
-
-## Marketing Links
-
-- Execution statistics → photo of a cat
-- Live chat claim is false
-
-**Severity:** Medium
+- Shows repeated “English” instead of selected language (e.g., Russian)
 
 ---
 
-# Corporate Tab
+# Expected Validation Standards
 
-Corporate onboarding is non-functional.
+- **First / Last Name**
+  - Min: 2–3 characters
+  - Max: 128–256 characters
 
-- Register Now → 404
-- Open Live Corporate → unreadable symbols / no action
-- Open Demo Corporate → unreadable symbols / no action
+- **Email**
+  - RFC-compliant format
+  - Max length: 254 characters
 
-**Severity:** Critical
+- **Dial Code**
+  - Numeric only
+  - Max 3–4 digits
+
+- **Phone Number**
+  - Numeric only
+  - ~9–10 digits (country dependent)
+
+- **Password**
+  - Clearly defined policy:
+    - Minimum length
+    - Uppercase
+    - Lowercase
+    - Digit
+    - Special character
+
+- **Submit Button**
+  - Enabled only when all validation passes
 
 ---
 
-# Language Selector
+# Automation Strategy (Playwright Ready)
 
-- Shows repeated "English" isntead of the selected language like "Russian" etc.
-- 6th option errors and breaks the registration page
+### Automatable
 
-**Severity:** Critical
-
----
-
-# Automation Strategy
-
-## Automatable
-
-- Required validation
+- Required field validation
 - Email format
-- Phone numeric rules
-- Password strength
+- Phone numeric + length rules
+- Password strength logic
 - Submit enablement
-- Country → dial code
-- Broken links
+- Country → dial code mapping
+- Broken link detection (404)
+- Language selector regression (including cookie/session persistence)
 
-## Manual / Contract Needed
+### Manual / Contract Needed
 
-- Legal entity logic
+- Legal entity logic by country
 - Password policy definition
-- Marketing content
+- Marketing content verification
 
 ---
 
 # Conclusion
 
-Registration is **not production ready**.
+The registration system contains multiple **BLOCKER** and **CRITICAL** defects.
 
-Major risks:
+Current impact:
 
-- User onboarding blocked
-- Validation unreliable
-- Corporate clients blocked
-- Security signals misleading
+- Individual onboarding impossible
+- Corporate clients fully blocked
+- Page state corruption via language selector
+- Validation and security signals unreliable
+
+**Release readiness: FAILED.**
+
+Immediate engineering intervention is required.
 
 ---

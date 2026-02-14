@@ -41,3 +41,5 @@
 20. 20 mins I was brainstorming with the and testing everything I could related to the form. I was recordnign my self talking. I did some screenshots and recorded a video. I am now going to work with gen AI. I will provide it the evidence so I can extract my notes regarding all the problems that I have discovered.
 21. Now I am going through the AI generated QA report and seeing duplications. I want the report to be conciese. Refactoring.
 22. Upadted the report to be accurate
+23. Battling a bit with Chat-GPT. Did not follow my insctructions. Had to open new window to clear the context.
+24.

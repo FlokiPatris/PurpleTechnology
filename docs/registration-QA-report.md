@@ -45,7 +45,6 @@ Immediate remediation is required before any release.
 
 ## 🔴 CRITICAL
 
-- Submit button typo: **“Start trending”** instead of **“Start trading”**
 - “Register Now” redirects to **404**
 - Corporate primary CTAs inaccessible (see Blockers)
 
@@ -103,6 +102,9 @@ Immediate remediation is required before any release.
 
 - Shows repeated “English” instead of selected language (e.g., Russian)
 
+### Submit Button
+- Typo: **“Start trending”** instead of **“Start trading”**
+
 ---
 
 # Expected Validation Standards
@@ -136,7 +138,7 @@ Immediate remediation is required before any release.
 
 ---
 
-# Automation Strategy (Playwright Ready)
+# Automation Strategy
 
 ### Automatable
 
@@ -151,7 +153,7 @@ Immediate remediation is required before any release.
 
 ### Manual / Contract Needed
 
-- Legal entity logic by country
+- Legal entity logic by country (Tradit Ltd vs Axiory Global Ltd)
 - Password policy definition
 - Marketing content verification
 

@@ -257,21 +257,21 @@
 ## P0 – Critical (Release Blockers)
 - REG-P01
 - REG-P02
-- REG-P04
+- REG-P03
 - REG-N01
 - REG-N02
 - REG-N03
 - REG-N04
 - REG-N05
-- REG-N09
+- REG-N06
 
 ## P1 – High
-- REG-P03
+- REG-P04
 - REG-P06
 - REG-P07
-- REG-N06
 - REG-N07
 - REG-N08
+- REG-N09
 
 ## P2 – Nice to Have
 - REG-P05

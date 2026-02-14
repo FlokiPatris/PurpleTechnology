@@ -1,6 +1,6 @@
-# Purple Technology — Registration QA Automation Task (Brno)
+# Purple Technology — Registration QA Automation Task
 
-This repository contains a QA automation showcase task for **Purple Technology (Brno)**, focused on the registration flow quality of a trading platform.
+This repository contains a QA automation showcase task for **Purple Technology**, focused on the registration flow quality of a trading platform.
 
 The assignment combines:
 - QA analysis,
@@ -70,10 +70,9 @@ npm run test:debug
 
 - QA report: [`docs/registration-QA-report.md`](docs/registration-QA-report.md)
 - Test scenarios: [`docs/test-scenarios.md`](docs/test-scenarios.md)
-- Architecture overview: [`docs/architecture.md`](docs/architecture.md)
 - Implementation notes: [`docs/notes.md`](docs/notes.md)
-- Prompt (TypeScript add/refactor): [`prompts/add-refactor-typescript.md`](prompts/add-refactor-typescript.md)
-- Prompt auditor: [`prompts/llm-prompt-auditor.md`](prompts/llm-prompt-auditor.md)
+- QA automation spec: [`docs/ai/qa-automation-spec.md`](docs/ai/qa-automation-spec.md)
+- Strict prompt auditor: [`docs/ai/strict-prompt-auditor.md`](docs/ai/strict-prompt-auditor.md)
 
 ## Project structure
 
@@ -82,5 +81,5 @@ npm run test:debug
 - `pages/RegistrationPage.ts` — registration page object
 - `fixtures/registrationFixtures.ts` — shared fixtures
 - `constants/users.ts` — reusable test data
-- `docs/` — supporting QA and architecture documentation
-- `prompts/` — prompt engineering artifacts used in the workflow
+- `docs/` — supporting QA documentation
+- `docs/ai/` — AI prompt/spec artifacts used in the workflow

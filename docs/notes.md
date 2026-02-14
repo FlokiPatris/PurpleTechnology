@@ -35,3 +35,6 @@
 17. Created 2 tests (emailValidation.spec, register.required.spec)
 18. Just realized there is no test ID for the form base elm. Have to look in the whole page (Flaky, slower approach)
 
+**Saturday 14.02.2026 — 14:00-17:00**
+19. Now when I have few running tests I am going to think about all the possible positive and negative test scenarious.
+20. 20 mins I was brainstorming with the and testing everything I could related to the form. I was recordnign my self talking. I did some screenshots and recorded a video. I am now going to work with gen AI. I will provide it the evidence so I can extract my notes regarding all the problems that I have discovered.

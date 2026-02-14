@@ -160,6 +160,7 @@ Immediate remediation is required before any release.
 
 I would generate unique emails and phone numbers using timestamps, CI run IDs, store credentials in CI secrets (never in code), and run tests against staging with isolated data to prevent collisions and flaky builds.
 
+#### Examples:
 ```ts
 const email = `qa+${Date.now()}@purple.cz`;
 const email = `qa+${process.env.CI_RUN_ID}-${process.env.TEST_WORKER_INDEX}@purple.cz`;

@@ -17,6 +17,7 @@
 
 ---
 
+<a id="reg-p01"></a>
 ## REG-P01 — Successful Individual Registration  
 **Priority:** P0 – Critical  
 
@@ -33,6 +34,7 @@
 
 ---
 
+<a id="reg-p02"></a>
 ## REG-P02 — Corporate Registration Entry Points  
 **Priority:** P0 – Critical  
 
@@ -47,6 +49,7 @@
 
 ---
 
+<a id="reg-p03"></a>
 ## REG-P03 — Language Selection  
 **Priority:** P0 – Critical  
 
@@ -64,6 +67,7 @@
 
 ---
 
+<a id="reg-p04"></a>
 ## REG-P04 — Country Selection Updates Dial Code  
 **Priority:** P1 – High  
 
@@ -80,6 +84,7 @@
 ---
 
 
+<a id="reg-p06"></a>
 ## REG-P06 — Tab Switching Stability  
 **Priority:** P1 – High  
 
@@ -95,6 +100,7 @@
 
 ---
 
+<a id="reg-p07"></a>
 ## REG-P07 — Navigation Links  
 **Priority:** P1 – High  
 
@@ -109,6 +115,7 @@
 
 ---
 
+<a id="reg-p05"></a>
 ## REG-P05 — Password Visibility Toggle  
 **Priority:** P2 – Nice to Have  
 
@@ -131,6 +138,7 @@
 
 ---
 
+<a id="reg-n01"></a>
 ## REG-N01 — Required Fields Validation  
 **Priority:** P0 – Critical  
 
@@ -144,6 +152,7 @@
 
 ---
 
+<a id="reg-n02"></a>
 ## REG-N02 — Consent Required  
 **Priority:** P0 – Critical  
 
@@ -157,6 +166,7 @@
 
 ---
 
+<a id="reg-n03"></a>
 ## REG-N03 — Email Format Validation  
 **Priority:** P0 – Critical  
 
@@ -170,6 +180,7 @@
 
 ---
 
+<a id="reg-n04"></a>
 ## REG-N04 — Phone Number Validation  
 **Priority:** P0 – Critical  
 
@@ -183,6 +194,7 @@
 
 ---
 
+<a id="reg-n05"></a>
 ## REG-N05 — Password Format Validation  
 **Priority:** P0 – Critical  
 
@@ -201,6 +213,7 @@
 
 ---
 
+<a id="reg-n06"></a>
 ## REG-N06 — Submit Button Gating  
 **Priority:** P0 – Critical  
 
@@ -214,6 +227,7 @@
 
 ---
 
+<a id="reg-n07"></a>
 ## REG-N07 — Password Strength Evaluation  
 **Priority:** P1 – High  
 
@@ -227,6 +241,7 @@
 
 ---
 
+<a id="reg-n08"></a>
 ## REG-N08 — Field Length Boundaries  
 **Priority:** P1 – High  
 
@@ -239,6 +254,7 @@
 
 ---
 
+<a id="reg-n09"></a>
 ## REG-N09 — Error Message Consistency  
 **Priority:** P1 – High  
 

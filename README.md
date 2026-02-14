@@ -21,22 +21,24 @@ The main goal is to evaluate the registration experience (Individual + Corporate
 
 | Scenario ID | Scenario | Priority | Status | Notes |
 | --- | --- | --- | --- | --- |
-| REG-P01 | Successful Individual Registration | P0 | Blocked | Implemented as `test.fixme` (product defect prevents verification). |
-| REG-P02 | Corporate Registration Entry Points | P0 | Blocked | Implemented as `test.fixme` (corporate flow blocked). |
-| REG-P03 | Language Selection | P0 | Blocked | Implemented as `test.fixme` (language/session corruption). |
-| REG-P04 | Country Selection Updates Dial Code | P1 | Planned | Scenario documented; no dedicated spec yet. |
-| REG-P05 | Password Visibility Toggle | P2 | Planned | Scenario documented; no dedicated spec yet. |
-| REG-P06 | Tab Switching Stability | P1 | Planned | Scenario documented; no dedicated spec yet. |
-| REG-P07 | Navigation Links | P1 | Planned | Scenario documented; no dedicated spec yet. |
-| REG-N01 | Required Fields Validation | P0 | Implemented | Automated in negative suite. |
-| REG-N02 | Consent Required | P0 | Blocked | Implemented as `test.fixme` (gating issue in current build). |
-| REG-N03 | Email Format Validation | P0 | Implemented | Automated in negative suite. |
-| REG-N04 | Phone Number Validation | P0 | Implemented | Automated in negative suite. |
-| REG-N05 | Password Format Validation | P0 | Implemented | Automated in negative suite. |
-| REG-N06 | Submit Button Gating | P0 | Blocked | Implemented as `test.fixme` (submit remains disabled). |
-| REG-N07 | Duplicate Email Registration | P1 | Planned | Scenario documented; no dedicated spec yet. |
-| REG-N08 | SQL Injection / Script Injection Attempt | P1 | Planned | Scenario documented; no dedicated spec yet. |
-| REG-N09 | Missing/Unavailable Legal/Privacy Links | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| [REG-P01](docs/test-scenarios.md#reg-p01) | Successful Individual Registration | P0 | Blocked | Implemented as `test.fixme` (product defect prevents verification). |
+| [REG-P02](docs/test-scenarios.md#reg-p02) | Corporate Registration Entry Points | P0 | Blocked | Implemented as `test.fixme` (corporate flow blocked). |
+| [REG-P03](docs/test-scenarios.md#reg-p03) | Language Selection | P0 | Blocked | Implemented as `test.fixme` (language/session corruption). |
+| [REG-P04](docs/test-scenarios.md#reg-p04) | Country Selection Updates Dial Code | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| [REG-P05](docs/test-scenarios.md#reg-p05) | Password Visibility Toggle | P2 | Planned | Scenario documented; no dedicated spec yet. |
+| [REG-P06](docs/test-scenarios.md#reg-p06) | Tab Switching Stability | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| [REG-P07](docs/test-scenarios.md#reg-p07) | Navigation Links | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| [REG-N01](docs/test-scenarios.md#reg-n01) | Required Fields Validation | P0 | Implemented | Automated in negative suite. |
+| [REG-N02](docs/test-scenarios.md#reg-n02) | Consent Required | P0 | Blocked | Implemented as `test.fixme` (gating issue in current build). |
+| [REG-N03](docs/test-scenarios.md#reg-n03) | Email Format Validation | P0 | Implemented | Automated in negative suite. |
+| [REG-N04](docs/test-scenarios.md#reg-n04) | Phone Number Validation | P0 | Implemented | Automated in negative suite. |
+| [REG-N05](docs/test-scenarios.md#reg-n05) | Password Format Validation | P0 | Implemented | Automated in negative suite. |
+| [REG-N06](docs/test-scenarios.md#reg-n06) | Submit Button Gating | P0 | Blocked | Implemented as `test.fixme` (submit remains disabled). |
+| [REG-N07](docs/test-scenarios.md#reg-n07) | Password Strength Evaluation | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| [REG-N08](docs/test-scenarios.md#reg-n08) | Field Length Boundaries | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| [REG-N09](docs/test-scenarios.md#reg-n09) | Error Message Consistency | P1 | Planned | Scenario documented; no dedicated spec yet. |
+
+> Note: Table columns are clickable links, but native GitHub Markdown tables are not sortable.
 
 ## Known limitations
 

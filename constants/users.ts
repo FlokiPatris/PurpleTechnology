@@ -16,3 +16,5 @@ export const SECOND_USER: RegistrationFormData = {
   email: 'jane.doe@example.com',
   firstName: 'Jane',
 };
+
+export const PASSWORD_VISIBILITY_TEST_VALUE = 'Secret123!';

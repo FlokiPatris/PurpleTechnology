@@ -18,6 +18,7 @@ Primary issues:
 - Corporate flow is non-functional
 - Multiple broken links (404 / no-op)
 - Validation rules are weak or missing
+- Language selection is misleading and 6th dropdown menu option breaks the page (Clearing cookies needed)
 
 Severity ranges from **Critical (submission impossible)** to **Medium (UX + validation issues)**.
 
@@ -155,8 +156,7 @@ Corporate onboarding is non-functional.
 
 # Language Selector
 
-- Shows repeated "English"
-- Actual languages mixed
+- Shows repeated "English" isntead of the selected language like "Russian" etc.
 - 6th option errors and breaks the registration page
 
 **Severity:** Critical
@@ -194,8 +194,4 @@ Major risks:
 - Corporate clients blocked
 - Security signals misleading
 
-Automation should begin after submission + validation fixes.
-
 ---
-
-End of report.

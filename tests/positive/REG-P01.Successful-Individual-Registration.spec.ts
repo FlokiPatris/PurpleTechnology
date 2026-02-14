@@ -2,7 +2,7 @@ import { test } from 'fixtures/registrationFixtures';
 
 test.fixme('REG-P01 — Successful Individual Registration', async ({ individualRegistrationFilled }) => {
   // Blocked: success criteria (toast/redirect) not verifiable in current build.
-  // Tracking bug (placeholder): https://jira.example.com/browse/REG-1102
+  // Tracking bug: internal ticket REG-1102
 
   // Act
   await individualRegistrationFilled.submit();

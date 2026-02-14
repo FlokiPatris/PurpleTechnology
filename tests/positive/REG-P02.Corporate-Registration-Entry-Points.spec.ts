@@ -2,7 +2,7 @@ import { test } from 'fixtures/registrationFixtures';
 
 test.fixme('REG-P02 — Corporate Registration Entry Points', async ({ corporateRegistration }) => {
   // Blocked: clicking Live/Demo does not navigate or open a new page in current build.
-  // Tracking bug (placeholder): https://jira.example.com/browse/REG-1103
+  // Tracking bug: internal ticket REG-1103
 
   // Act
   await corporateRegistration.clickCorporateLive();

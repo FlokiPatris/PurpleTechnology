@@ -1,89 +1,86 @@
 # Purple Technology — Registration QA Automation Task (Brno)
 
-This repository is a **QA automation showcase task** focused on the registration flow for Purple Technology.
-It demonstrates how to combine:
+This repository contains a QA automation showcase task for **Purple Technology (Brno)**, focused on the registration flow quality of a trading platform.
 
-- structured QA analysis,
-- risk-based test design,
-- and practical Playwright + TypeScript automation.
+The assignment combines:
+- QA analysis,
+- risk-based test scenario design,
+- and Playwright + TypeScript automation implementation.
 
-The goal is to evaluate and document the quality of the registration experience (Individual + Corporate), highlight release risks, and provide a maintainable starting point for regression coverage.
+## Purpose
 
-## What this project is for
-
-This project serves as a practical assignment deliverable for Purple Technology in Brno, covering:
-
-- investigation of the registration form behavior,
-- prioritization of critical defects,
-- conversion of findings into concrete test scenarios,
-- and implementation of automated tests for the highest-impact paths.
-
-In short: it is not only "tests", but a complete **analysis → scenarios → automation** QA workflow.
-
-## Project structure
-
-- `tests/positive/` — positive registration and navigation flows.
-- `tests/negative/` — validation, gating, and error behavior.
-- `pages/RegistrationPage.ts` — page object abstraction for the registration page.
-- `fixtures/registrationFixtures.ts` — shared test setup/fixtures.
-- `constants/users.ts` — reusable test data.
-- `docs/registration-QA-report.md` — defect report with severity and release impact.
-- `docs/test-scenarios.md` — scenario catalog with priorities.
-- `docs/architecture.md` — architecture overview.
-- `docs/notes.md` — process notes from analysis and implementation.
+The main goal is to evaluate the registration experience (Individual + Corporate), identify critical defects, and provide maintainable automated regression coverage for high-priority risks.
 
 ## Test summary
 
-The automated suite currently covers key **P0/P1-style** registration risks, including:
-
 ### Positive coverage
-
-- Individual registration happy path.
-- Corporate registration entry points.
-- Language selector behavior.
+- Individual registration happy path
+- Corporate registration entry points
+- Language selection behavior
 
 ### Negative coverage
+- Required fields validation
+- Consent-required gating
+- Email format validation
+- Phone number validation
+- Password format validation
+- Submit button enable/disable gating
 
-- Required field validation.
-- Consent requirement (terms/privacy gate).
-- Email format validation.
-- Phone number validation.
-- Password format validation.
-- Submit button enable/disable gating logic.
+## Setup (local)
 
-## Key quality findings
+### 1) Clone the repository
+```bash
+git clone https://github.com/FlokiPatris/PurpleTechnology.git
+cd PurpleTechnology
+```
 
-Based on the QA report, the registration flow contains multiple severe issues (including blockers), such as:
-
-- inability to complete some onboarding paths,
-- unreliable validation behavior,
-- and state corruption risks in language switching.
-
-Current release-readiness conclusion in the report: **FAILED**.
-
-## Tech stack
-
-- [Playwright](https://playwright.dev/)
-- TypeScript
-- Node.js
-
-## Run locally
-
+### 2) Install dependencies
 ```bash
 npm install
+```
+
+### 3) Install Playwright browsers
+```bash
 npx playwright install
+```
+
+## Run tests
+
+### Run full test suite
+```bash
 npm test
 ```
 
-Useful alternatives:
-
+### Run tests in UI mode
 ```bash
 npm run test:ui
+```
+
+### Run tests in headed mode
+```bash
 npm run test:headed
+```
+
+### Run tests in debug mode
+```bash
 npm run test:debug
 ```
 
-## Notes
+## For recruiters — quick links
 
-- The suite is designed as a baseline that can be extended with additional scenario IDs from `docs/test-scenarios.md`.
-- For CI, prefer unique generated data (email/phone) to reduce collisions and flakiness.
+- QA report: [`docs/registration-QA-report.md`](docs/registration-QA-report.md)
+- Test scenarios: [`docs/test-scenarios.md`](docs/test-scenarios.md)
+- Architecture overview: [`docs/architecture.md`](docs/architecture.md)
+- Implementation notes: [`docs/notes.md`](docs/notes.md)
+- Prompt (TypeScript add/refactor): [`prompts/add-refactor-typescript.md`](prompts/add-refactor-typescript.md)
+- Prompt auditor: [`prompts/llm-prompt-auditor.md`](prompts/llm-prompt-auditor.md)
+
+## Project structure
+
+- `tests/positive/` — positive registration and navigation flows
+- `tests/negative/` — validation and negative scenarios
+- `pages/RegistrationPage.ts` — registration page object
+- `fixtures/registrationFixtures.ts` — shared fixtures
+- `constants/users.ts` — reusable test data
+- `docs/` — supporting QA and architecture documentation
+- `prompts/` — prompt engineering artifacts used in the workflow

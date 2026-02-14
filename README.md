@@ -8,10 +8,6 @@ This repository contains a QA automation showcase task for **Purple Technology**
 - **What is broken:** Multiple blocker/critical defects currently prevent reliable onboarding (including blocked core flows and language selector instability).
 - **Current release decision:** **FAILED** (see QA report conclusion).
 
-## Current decision
-
-> **Release readiness: FAILED** — immediate engineering intervention required.
-
 ## Purpose
 
 The assignment combines:
@@ -23,25 +19,24 @@ The main goal is to evaluate the registration experience (Individual + Corporate
 
 ## Current status (Implemented | Blocked | Planned)
 
-| Scenario | Status | Notes |
-| --- | --- | --- |
-| REG-P01 — Successful Individual Registration | Blocked | Marked `test.fixme` due to product defect. |
-| REG-P02 — Corporate Registration Entry Points | Blocked | Marked `test.fixme` due to blocked corporate onboarding flow. |
-| REG-P03 — Language Selection | Blocked | Marked `test.fixme` due to language/session corruption defect. |
-| REG-N02 — Consent Required | Blocked | Marked `test.fixme` due to consent gating defect. |
-| REG-N06 — Submit Button Gating | Blocked | Marked `test.fixme` due to submit gating defect. |
-| Remaining automated specs in `tests/positive` and `tests/negative` | Implemented | Active regression checks. |
-| Additional lower-priority scenarios from `docs/test-scenarios.md` | Planned | Candidate expansion after blocker fixes. |
-
-## Traceability (scenario → spec)
-
-| Scenario ID | Spec file | Current status |
-| --- | --- | --- |
-| REG-P01 | `tests/positive/REG-P01.Successful-Individual-Registration.spec.ts` | Blocked (`fixme`) |
-| REG-P02 | `tests/positive/REG-P02.Corporate-Registration-Entry-Points.spec.ts` | Blocked (`fixme`) |
-| REG-P03 | `tests/positive/REG-P03.Language-Selection.spec.ts` | Blocked (`fixme`) |
-| REG-N02 | `tests/negative/REG-N02.Consent-Required.spec.ts` | Blocked (`fixme`) |
-| REG-N06 | `tests/negative/REG-N06.Submit-Button-Gating.spec.ts` | Blocked (`fixme`) |
+| Scenario ID | Scenario | Priority | Status | Notes |
+| --- | --- | --- | --- | --- |
+| REG-P01 | Successful Individual Registration | P0 | Blocked | Implemented as `test.fixme` (product defect prevents verification). |
+| REG-P02 | Corporate Registration Entry Points | P0 | Blocked | Implemented as `test.fixme` (corporate flow blocked). |
+| REG-P03 | Language Selection | P0 | Blocked | Implemented as `test.fixme` (language/session corruption). |
+| REG-P04 | Country Selection Updates Dial Code | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| REG-P05 | Password Visibility Toggle | P2 | Planned | Scenario documented; no dedicated spec yet. |
+| REG-P06 | Tab Switching Stability | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| REG-P07 | Navigation Links | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| REG-N01 | Required Fields Validation | P0 | Implemented | Automated in negative suite. |
+| REG-N02 | Consent Required | P0 | Blocked | Implemented as `test.fixme` (gating issue in current build). |
+| REG-N03 | Email Format Validation | P0 | Implemented | Automated in negative suite. |
+| REG-N04 | Phone Number Validation | P0 | Implemented | Automated in negative suite. |
+| REG-N05 | Password Format Validation | P0 | Implemented | Automated in negative suite. |
+| REG-N06 | Submit Button Gating | P0 | Blocked | Implemented as `test.fixme` (submit remains disabled). |
+| REG-N07 | Duplicate Email Registration | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| REG-N08 | SQL Injection / Script Injection Attempt | P1 | Planned | Scenario documented; no dedicated spec yet. |
+| REG-N09 | Missing/Unavailable Legal/Privacy Links | P1 | Planned | Scenario documented; no dedicated spec yet. |
 
 ## Known limitations
 

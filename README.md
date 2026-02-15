@@ -8,21 +8,6 @@ This repository contains a QA automation showcase task for **Purple Technology**
 - **What is broken:** Multiple blocker/critical defects currently prevent reliable onboarding (including blocked core flows and language selector instability).
 - **Current release decision:** **FAILED** (see QA report conclusion).
 
-## How to evaluate this submission
-
-1. Read the QA outcome and severity analysis in [`docs/registration-QA-report.md`](docs/registration-QA-report.md).
-2. Review scenario intent and priorities in [`docs/test-scenarios.md`](docs/test-scenarios.md).
-3. Verify implementation mapping in the `tests/positive` and `tests/negative` folders.
-4. Optionally run `npm test` locally to inspect passing vs blocked (`fixme`) specs.
-
-## For recruiters — quick links
-
-- QA report: [`docs/registration-QA-report.md`](docs/registration-QA-report.md)
-- Test scenarios: [`docs/test-scenarios.md`](docs/test-scenarios.md)
-- Implementation notes: [`docs/notes.md`](docs/notes.md)
-- QA automation spec: [`docs/ai/qa-automation-spec.md`](docs/ai/qa-automation-spec.md)
-- Strict prompt auditor: [`docs/ai/strict-prompt-auditor.md`](docs/ai/strict-prompt-auditor.md)
-  
 ## Purpose
 
 The assignment combines:
@@ -115,6 +100,21 @@ npm run test:debug -- --workers=1
 ```bash
 npx playwright test tests/negative/REG-N01.Required-Fields-Validation.spec.ts --workers=1
 ```
+
+## How to evaluate this submission
+
+1. Read the QA outcome and severity analysis in [`docs/registration-QA-report.md`](docs/registration-QA-report.md).
+2. Review scenario intent and priorities in [`docs/test-scenarios.md`](docs/test-scenarios.md).
+3. Verify implementation mapping in the `tests/positive` and `tests/negative` folders.
+4. Optionally run `npm test` locally to inspect passing vs blocked (`fixme`) specs.
+
+## For recruiters — quick links
+
+- QA report: [`docs/registration-QA-report.md`](docs/registration-QA-report.md)
+- Test scenarios: [`docs/test-scenarios.md`](docs/test-scenarios.md)
+- Implementation notes: [`docs/notes.md`](docs/notes.md)
+- QA automation spec: [`docs/ai/qa-automation-spec.md`](docs/ai/qa-automation-spec.md)
+- Strict prompt auditor: [`docs/ai/strict-prompt-auditor.md`](docs/ai/strict-prompt-auditor.md)
 
 ## Project structure
 

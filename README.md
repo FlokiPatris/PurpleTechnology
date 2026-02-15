@@ -38,13 +38,6 @@ The main goal is to evaluate the registration experience (Individual + Corporate
 | [REG-N08](docs/test-scenarios.md#reg-n08) | Field Length Boundaries | P1 | Planned | Scenario documented; no dedicated spec yet. |
 | [REG-N09](docs/test-scenarios.md#reg-n09) | Error Message Consistency | P1 | Planned | Scenario documented; no dedicated spec yet. |
 
-
-## Known limitations
-
-- Some critical scenarios are intentionally `fixme` because application behavior is currently blocked by confirmed defects.
-- The submit CTA appears in-app as **"Start trending"** in defect contexts; this is the product text under test, not intentional project wording.
-- Tracking IDs in comments use internal-style identifiers (e.g., `REG-1102`) and are not linked to public ticket URLs.
-
 ## Version assumptions
 
 - Node.js 20+ (recommended)

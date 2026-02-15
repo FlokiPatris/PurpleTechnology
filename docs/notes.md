@@ -74,7 +74,7 @@
 ### 2nd question: How should a modern QA team change their workflow today to be ready for this future?
 - Embrace AI tools, but avoid blind dependency.
 - Compare and validate outputs across multiple models.
-- Contemplate workflows are prone to error or are repetitive and suitable for AI.
+- Contemplate workflows that are prone to error or are repetitive and suitable for AI.
 - Contemplate which approaches remain future-proof as AI progress accelerates.
 - Preserve human review for critical decisions.
 

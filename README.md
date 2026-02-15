@@ -46,7 +46,7 @@ The main goal is to evaluate the registration experience (Individual + Corporate
 
 ## Setup (local)
 ### 1. Install Git
-https://git-scm.com/install/windows
+https://git-scm.com/install/
 
 ### 2. Clone the repository and navigate there
 ```bash

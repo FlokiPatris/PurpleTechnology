@@ -27,6 +27,7 @@ export class RegistrationPage {
   private readonly dialCodeField: Locator;
   private readonly phoneNumberField: Locator;
   private readonly passwordField: Locator;
+  private readonly passwordVisibilityToggleIcon: Locator;
   private readonly countryField: Locator;
   private readonly countrySelectInput: Locator;
 
@@ -77,6 +78,7 @@ export class RegistrationPage {
     this.dialCodeField = page.locator('[data-testid="dialCode"]');
     this.phoneNumberField = page.locator('[data-testid="phoneNumber"]');
     this.passwordField = page.locator('[data-testid="password"]');
+    this.passwordVisibilityToggleIcon = this.passwordField.getByTestId('Icon').first();
 
     this.firstNameInput = this.firstNameField.locator('input[name="lastName"]');
     this.lastNameInput = this.lastNameField.locator('input[name="firstName"]');
@@ -180,6 +182,10 @@ export class RegistrationPage {
     await this.blur(this.passwordInput);
   }
 
+  async togglePasswordVisibility(): Promise<void> {
+    await this.passwordVisibilityToggleIcon.click();
+  }
+
   async setTermsConsent(checked: boolean): Promise<void> {
     const isChecked = await this.termsCheckbox.isChecked();
     if (checked !== isChecked) await this.termsCheckbox.click();
@@ -263,6 +269,14 @@ export class RegistrationPage {
 
   async expectPasswordInvalidFormatError(): Promise<void> {
     await expect(this.passwordInvalidFormatError).toBeVisible();
+  }
+
+  async expectPasswordInputType(type: 'password' | 'text'): Promise<void> {
+    await expect(this.passwordInput).toHaveAttribute('type', type);
+  }
+
+  async expectPasswordValue(value: string): Promise<void> {
+    await expect(this.passwordInput).toHaveValue(value);
   }
 
   async expectTermsErrorVisible(): Promise<void> {

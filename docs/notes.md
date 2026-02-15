@@ -1,6 +1,6 @@
 # AI-Enhanced Automation QA — Process Notes
 
-**Friday 13.02.2026 — 2.5 hours**
+# **Friday 13.02.2026 — 2.5 hours**
 
 ## Overview
 
@@ -34,7 +34,7 @@
 17. Created 2 tests (emailValidation.spec, register.required.spec)
 18. Just realized there is no test ID for the form base elm. Have to look in the whole page (Flaky, slower approach)
 
-**Saturday 14.02.2026 - 7 hours**
+# **Saturday 14.02.2026 - 7 hours**
 
 ## 🐜 First Task: Analysis & Strategy
 
@@ -60,7 +60,7 @@
 34. Created all the tests.
 35. Used Codex for repo code polishment and creating README
 
-**Saturday 14.02.2026 - 3 hours**
+# **Saturday 14.02.2026 - 3 hours**
 36. Yesterday and today I was debugging why the tests are flaky. I used to have checks in fixtures after use in teardown. Then I realized the use is similar to yield in pytest fixtures. When I moved the checks in the setup phase tests started to fail. I did not know why. Now I know that the checks are correctly placed and I have to run the tests with max 3 workers. 6 workers seems like overkill.
 37. Commiting the refactored fixtures and main POM.
 

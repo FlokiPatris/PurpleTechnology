@@ -19,6 +19,7 @@ Primary risks:
 - Language selector corrupts session state
 - Validation and security indicators are unreliable
 - data-testid html attributes are missing for some base elements and other elements (Slower, flakier tests.)
+- The submit button is clickable only once a day or under ambiguous cirmumstances
 
 Immediate remediation is required before any release.
 
@@ -132,9 +133,6 @@ Immediate remediation is required before any release.
     - Lowercase
     - Digit
     - Special character
-
-- **Submit Button**
-  - Enabled only when all validation passes
 
 ---
 

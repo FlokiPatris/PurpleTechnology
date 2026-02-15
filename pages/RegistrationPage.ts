@@ -2,6 +2,7 @@ import { expect, Locator, Page } from '@playwright/test';
 
 export type RequiredFieldKey = 'firstName' | 'lastName' | 'email';
 export type EmailToastType = 'invalidEmail' | 'maxLength';
+
 export type RegistrationFormData = {
   firstName: string;
   lastName: string;
@@ -19,16 +20,34 @@ export class RegistrationPage {
   // =========================
 
   private readonly page: Page;
-
   private readonly firstNameField: Locator;
   private readonly lastNameField: Locator;
   private readonly emailField: Locator;
-
   private readonly dialCodeField: Locator;
   private readonly phoneNumberField: Locator;
   private readonly passwordField: Locator;
   private readonly countryField: Locator;
   private readonly countrySelectInput: Locator;
+  private readonly firstNameRequiredError: Locator;
+  private readonly lastNameRequiredError: Locator;
+  private readonly emailRequiredError: Locator;
+  private readonly dialCodeUsePlusFormatError: Locator;
+  private readonly phoneInvalidFormatError: Locator;
+  private readonly passwordInvalidFormatError: Locator;
+  private readonly invalidEmailError: Locator;
+  private readonly maxEmailLengthError: Locator;
+  private readonly termsCheckbox: Locator;
+  private readonly termsError: Locator;
+  private readonly submissionError: Locator;
+  private readonly submitButton: Locator;
+  private readonly individualTab: Locator;
+  private readonly corporateTab: Locator;
+  private readonly individualTabRoot: Locator;
+  private readonly corporateTabRoot: Locator;
+  private readonly corporateLiveButton: Locator;
+  private readonly corporateDemoButton: Locator;
+  private readonly languageSelect: Locator;
+  private readonly languageComboboxInput: Locator;
 
   readonly firstNameInput: Locator;
   readonly lastNameInput: Locator;
@@ -37,92 +56,55 @@ export class RegistrationPage {
   readonly phoneNumberInput: Locator;
   readonly passwordInput: Locator;
 
-  private readonly firstNameRequired: Locator;
-  private readonly lastNameRequired: Locator;
-  private readonly emailRequired: Locator;
-
-  private readonly dialCodeUsePlusFormatError: Locator;
-  private readonly phoneInvalidFormatError: Locator;
-
-  private readonly passwordInvalidFormatError: Locator;
-
-  private readonly termsCheckbox: Locator;
-  private readonly termsError: Locator;
-  private readonly formError: Locator;
-
-  private readonly submitButton: Locator;
-  private readonly submitButtonText: Locator;
-
-  private readonly individualTab: Locator;
-  private readonly corporateTab: Locator;
-  private readonly corporateLiveButton: Locator;
-  private readonly corporateDemoButton: Locator;
-
-  private readonly languageSelect: Locator;
-  private readonly languageComboboxInput: Locator;
-
-  private readonly invalidEmailToastText: Locator;
-  private readonly maxEmailLengthToastText: Locator;
-
   constructor(page: Page) {
     this.page = page;
 
     this.firstNameField = page.locator('[data-testid="lastName"]');
     this.lastNameField = page.locator('[data-testid="firstName"]');
-
     this.emailField = page.locator('[data-testid="TextInput"]').filter({
       has: page.locator('input[name="email"]'),
     });
-
     this.dialCodeField = page.locator('[data-testid="dialCode"]');
     this.phoneNumberField = page.locator('[data-testid="phoneNumber"]');
     this.passwordField = page.locator('[data-testid="password"]');
+    this.countryField = page.locator('[data-testid="country"]');
 
+    this.countrySelectInput = this.countryField.locator('#react-select-5-input');
     this.firstNameInput = this.firstNameField.locator('input[name="lastName"]');
     this.lastNameInput = this.lastNameField.locator('input[name="firstName"]');
     this.emailInput = this.emailField.locator('input[name="email"]');
-    this.countryField = page.locator('[data-testid="country"]');
-    this.countrySelectInput = this.countryField.locator('#react-select-5-input');
-
     this.dialCodeInput = this.dialCodeField.locator('input[name="dialCode"]');
     this.phoneNumberInput = this.phoneNumberField.locator('input[name="phoneNumber"]');
     this.passwordInput = this.passwordField.locator('input[name="password"]');
 
-    this.firstNameRequired = this.firstNameField.getByText('Required', { exact: true });
-    this.lastNameRequired = this.lastNameField.getByText('Required', { exact: true });
-    this.emailRequired = this.emailField.getByText('Required', { exact: true });
-
+    this.firstNameRequiredError = this.firstNameField.getByText('Required', { exact: true });
+    this.lastNameRequiredError = this.lastNameField.getByText('Required', { exact: true });
+    this.emailRequiredError = this.emailField.getByText('Required', { exact: true });
     this.dialCodeUsePlusFormatError = this.dialCodeField.getByText('Use +XXX format', { exact: true });
     this.phoneInvalidFormatError = this.phoneNumberField.getByText('Phone number is in invalid format', { exact: true });
-
     this.passwordInvalidFormatError = this.passwordField.getByText(
       'Invalid password format. Please use at least 6 characters and avoid starting or ending with a space.',
       { exact: true }
     );
+    this.termsError = page
+      .locator('[data-testid="termsError"]')
+      .getByText('You have to agree with our Terms and Conditions', { exact: true });
+    this.submissionError = page
+      .locator('[data-testid="formError"]')
+      .getByText('Some fields are not valid. Please check them and try to submit the form again.', { exact: true });
+    this.invalidEmailError = page.getByText('Invalid email address', { exact: true });
+    this.maxEmailLengthError = page.getByText('Maximum length of email address is 46 characters.', { exact: true });
 
     this.termsCheckbox = page.locator('#agreeConditions');
-    this.termsError = page.locator('[data-testid="termsError"]').getByText(
-      'You have to agree with our Terms and Conditions',
-      { exact: true }
-    );
-    this.formError = page.locator('[data-testid="formError"]').getByText(
-      'Some fields are not valid. Please check them and try to submit the form again.',
-      { exact: true }
-    );
-
     this.submitButton = page.locator('button[data-testid="Button"][type="submit"]');
-    this.submitButtonText = this.submitButton.getByText('Start trending', { exact: true });
-
     this.individualTab = page.locator('[data-testid="individualTab"]');
     this.corporateTab = page.locator('[data-testid="corporateTab"]');
+    this.individualTabRoot = this.individualTab.locator('xpath=ancestor::li[@role="tab"]');
+    this.corporateTabRoot = this.corporateTab.locator('xpath=ancestor::li[@role="tab"]');
     this.corporateLiveButton = page.locator('[data-testid="corporateLiveButton"]');
     this.corporateDemoButton = page.locator('[data-testid="corporateDemoButton"]');
-
     this.languageSelect = page.locator('[data-testid="languageSelect"]');
     this.languageComboboxInput = page.locator('#react-select-2-input');
-
-    this.invalidEmailToastText = page.getByText('Invalid email address', { exact: true });
-    this.maxEmailLengthToastText = page.getByText('Maximum length of email address is 46 characters.', { exact: true });
   }
 
   // =========================
@@ -136,11 +118,11 @@ export class RegistrationPage {
   private requiredFieldLocator(field: RequiredFieldKey): Locator {
     switch (field) {
       case 'firstName':
-        return this.firstNameRequired;
+        return this.firstNameRequiredError;
       case 'lastName':
-        return this.lastNameRequired;
+        return this.lastNameRequiredError;
       case 'email':
-        return this.emailRequired;
+        return this.emailRequiredError;
     }
   }
 
@@ -185,16 +167,26 @@ export class RegistrationPage {
     if (checked !== isChecked) await this.termsCheckbox.click();
   }
 
-  async submit(): Promise<void> {
+  async clickSubmit(): Promise<void> {
     await this.submitButton.click();
   }
 
-  async openIndividualTab(): Promise<void> {
-    await this.individualTab.click();
+  async clickIndividualTab(): Promise<void> {
+    await expect(this.individualTab).toBeVisible();
+
+    const selected = await this.individualTabRoot.getAttribute('aria-selected');
+    if (selected !== 'true') {
+      await this.individualTab.click();
+    }
   }
-  
-  async openCorporateTab(): Promise<void> {
-    await this.corporateTab.click();
+
+  async clickCorporateTab(): Promise<void> {
+    await expect(this.corporateTab).toBeVisible();
+
+    const selected = await this.corporateTabRoot.getAttribute('aria-selected');
+    if (selected !== 'true') {
+      await this.corporateTab.click();
+    }
   }
 
   async clickCorporateLive(): Promise<void> {
@@ -206,22 +198,22 @@ export class RegistrationPage {
   }
 
   async selectCountry(country: string): Promise<void> {
-  await this.countrySelectInput.click();
-  await this.countrySelectInput.fill(country);
-  await this.page.keyboard.press('Enter');
+    await this.countrySelectInput.click();
+    await this.countrySelectInput.fill(country);
+    await this.page.keyboard.press('Enter');
   }
 
-  async fillForm(data: RegistrationFormData): Promise<void> {
-  await this.firstNameInput.fill(data.firstName);
-  await this.lastNameInput.fill(data.lastName);
-  await this.emailInput.fill(data.email);
+  async fillFormSetConsent(data: RegistrationFormData): Promise<void> {
+    await this.firstNameInput.fill(data.firstName);
+    await this.lastNameInput.fill(data.lastName);
+    await this.emailInput.fill(data.email);
 
-  await this.selectCountry(data.country);
-  await this.dialCodeInput.fill(data.dialCode);
-  await this.phoneNumberInput.fill(data.phoneNumber);
+    await this.selectCountry(data.country);
+    await this.dialCodeInput.fill(data.dialCode);
+    await this.phoneNumberInput.fill(data.phoneNumber);
 
-  await this.passwordInput.fill(data.password);
-  await this.setTermsConsent(data.acceptTerms);
+    await this.passwordInput.fill(data.password);
+    await this.setTermsConsent(data.acceptTerms);
   }
 
   // =========================
@@ -245,14 +237,30 @@ export class RegistrationPage {
   async expectEmailToast(type: EmailToastType): Promise<void> {
     switch (type) {
       case 'invalidEmail':
-        await expect(this.invalidEmailToastText).toBeVisible();
+        await expect(this.invalidEmailError).toBeVisible();
         return;
       case 'maxLength':
-        await expect(this.maxEmailLengthToastText).toBeVisible();
+        await expect(this.maxEmailLengthError).toBeVisible();
         return;
     }
   }
 
+  async expectSubmitState(state: 'enabled' | 'disabled'): Promise<void> {
+    switch (state) {
+      case 'enabled':
+        await expect(this.submitButton).toBeEnabled();
+        return;
+
+      case 'disabled':
+        await expect(this.submitButton).toBeDisabled();
+        return;
+
+      default: {
+        const _exhaustive: never = state;
+        throw new Error(`Unhandled submit state: ${_exhaustive}`);
+      }
+    }
+  }
   async expectDialCodeUsePlusError(): Promise<void> {
     await expect(this.dialCodeUsePlusFormatError).toBeVisible();
   }
@@ -269,12 +277,8 @@ export class RegistrationPage {
     await expect(this.termsError).toBeVisible();
   }
 
-  async expectFormErrorVisible(): Promise<void> {
-    await expect(this.formError).toBeVisible();
-  }
-
-  async expectSubmitDisabled(): Promise<void> {
-    await expect(this.submitButton).toBeDisabled();
+  async expectSubmissionBlockedVisible(): Promise<void> {
+    await expect(this.submissionError).toBeVisible();
   }
 
   async expectTabsVisible(): Promise<void> {
@@ -285,6 +289,12 @@ export class RegistrationPage {
   async expectCorporateButtonsVisible(): Promise<void> {
     await expect(this.corporateLiveButton).toBeVisible();
     await expect(this.corporateDemoButton).toBeVisible();
+  }
+    
+  async expectIndividualFormReady(): Promise<void> {
+    await expect(this.firstNameInput).toBeVisible();
+    await expect(this.lastNameInput).toBeVisible();
+    await expect(this.emailInput).toBeVisible();
   }
 
   async expectLanguageSelectorBaseline(): Promise<void> {

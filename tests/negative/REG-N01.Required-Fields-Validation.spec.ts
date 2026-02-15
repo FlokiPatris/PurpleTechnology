@@ -1,9 +1,9 @@
 import { test } from 'fixtures/registrationFixtures';
 
-test('REG-N01 — Required Fields Validation', async ({ individualregistration: registration }) => {
+test('REG-N01 — Required Fields Validation', async ({ individualregistration }) => {
   // Act
-  await registration.triggerRequiredForThreeFields();
+  await individualregistration.triggerRequiredForThreeFields();
 
   // Assert
-  await registration.expectRequiredErrorsCount(3);
+  await individualregistration.expectRequiredErrorsCount(3);
 });

@@ -1,6 +1,6 @@
 # AI-Enhanced Automation QA — Process Notes
 
-**Friday 13.02.2026 — 17:15–19:55**
+**Friday 13.02.2026 — 2.5 hours**
 
 ## Overview
 
@@ -35,7 +35,7 @@
 17. Created 2 tests (emailValidation.spec, register.required.spec)
 18. Just realized there is no test ID for the form base elm. Have to look in the whole page (Flaky, slower approach)
 
-**Saturday 14.02.2026 — 14:00-20:25**
+**Saturday 14.02.2026 - 7 hours**
 
 ## 🐜 First Task: Analysis & Strategy
 
@@ -55,10 +55,14 @@
 
 ## 🤖 Third Task: Test Implementation
 29. I activated the TS prompt in chat-GPT. Provided: test scenarios, whole registration page HTML, existing TS code. Will proceed with creating the tests. And prompted: update the repo source code and cover all the CRITICAL scenarios
-30. Refactoring the tests. Applying best testing standarsts. Asking chat-GPT to provide me a command to create all the test cases in terminal (Too lazy to create the test cases one by one)
+30. Refactoring the tests. Applying best testing standarsts. Asking chat-GPT to provide me a command to create all the test cases in terminal
 31. Distiungishing positive and negative cases
 32. Created TS config to use absolute imports
 33. Updated global timeout for playwright
 34. Created the tests.
+35. Used Codex for repo code polishment and creating README
 
+**Saturday 14.02.2026 - 2 hours**
+36. Yesterday and today I was debugging why the test are flaky. I used to have checks after use in teardown. Then I realized the use is similar to yield in pytest fixtures. When I moved the checks in the setup phase tests started to fail. I did not know why. Now I know that the cheks are correctly placed and I have to run the tests with max 3 workers. 6 workers seems like overkill.
+37. Commiting the refactored fixtures and main POM.
 

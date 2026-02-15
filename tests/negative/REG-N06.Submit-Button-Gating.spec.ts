@@ -1,13 +1,12 @@
 import { test } from 'fixtures/registrationFixtures';
 
-test.fixme('REG-N06 — Submit Button Gating', async ({ individualregistration: registration }) => {
+test.fixme('REG-N06 — Submit Button Gating', async ({ submitButtonGating }) => {
   // Blocked by product: submit button is disabled and not clickable.
   // Tracking bug: internal ticket REG-1024
 
   // Act
-  await registration.submit();
+  await submitButtonGating.clickSubmit();
 
   // Assert
-  await registration.expectFormErrorVisible();
-  await registration.expectSubmitDisabled();
+  await submitButtonGating.expectSubmissionBlockedVisible();
 });

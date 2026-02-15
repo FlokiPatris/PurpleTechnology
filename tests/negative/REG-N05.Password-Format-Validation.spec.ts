@@ -7,11 +7,11 @@ const cases = [
 ];
 
 for (const c of cases) {
-  test(`REG-N05 — Password Format Validation (${c.name})`, async ({ individualregistration: registration }) => {
+  test(`REG-N05 — Password Format Validation (${c.name})`, async ({ individualregistration }) => {
     // Act
-    await registration.fillPasswordAndBlur(c.value);
+    await individualregistration.fillPasswordAndBlur(c.value);
 
     // Assert
-    await registration.expectPasswordInvalidFormatError();
+    await individualregistration.expectPasswordInvalidFormatError();
   });
 }

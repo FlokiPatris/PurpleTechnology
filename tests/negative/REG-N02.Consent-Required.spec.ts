@@ -1,14 +1,14 @@
 import { test } from 'fixtures/registrationFixtures';
 
 
-test.fixme('REG-N02 — Consent Required', async ({ individualregistration: registration }) => {
+test.fixme('REG-N02 — Consent Required', async ({ individualregistration }) => {
   // Blocked by product: submit button is disabled and not clickable.
   // Tracking bug: internal ticket REG-1023
 
   // Act
-  await registration.setTermsConsent(false);
-  await registration.submit();
+  await individualregistration.setTermsConsent(false);
+  await individualregistration.clickSubmit();
 
   // Assert
-  await registration.expectTermsErrorVisible();
+  await individualregistration.expectTermsErrorVisible();
 });

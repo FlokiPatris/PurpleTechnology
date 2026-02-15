@@ -53,42 +53,58 @@ The main goal is to evaluate the registration experience (Individual + Corporate
 
 ## Setup (local)
 
-### 1) Clone the repository
+### 1. Clone the repository
 ```bash
 git clone https://github.com/FlokiPatris/PurpleTechnology.git
 cd PurpleTechnology
 ```
 
-### 2) Install dependencies
+### 2. Install dependencies
 ```bash
 npm install
 ```
 
-### 3) Install Playwright browsers
+### 3. Install Playwright browsers
 ```bash
 npx playwright install
 ```
 
 ## Run tests
 
-### Run full test suite
+> ⚠️ Important note about parallelism  
+> Tests were verified locally with **3 workers**, however the target environment can be slow and may rate-limit parallel execution.  
+> For maximum reliability (especially on CI or first run), use **1 worker**.
+
+If tests pass with `--workers=1` but fail at higher worker counts, treat this as an environment/performance limitation rather than a functional regression.
+
+### Recommended (faster, may be flaky depending on environment)
 ```bash
-npm test
+npm test -- --workers=2
 ```
 
-### Run tests in UI mode
+### Stable mode (most reliable)
 ```bash
-npm run test:ui
+npm test -- --workers=1
 ```
 
-### Run tests in headed mode
+### UI mode
 ```bash
-npm run test:headed
+npm run test:ui -- --workers=1
 ```
 
-### Run tests in debug mode
+### Headed mode
 ```bash
-npm run test:debug
+npm run test:headed -- --workers=1
+```
+
+### Debug mode
+```bash
+npm run test:debug -- --workers=1
+```
+
+### Run a single spec
+```bash
+npx playwright test tests/negative/REG-N01.Required-Fields-Validation.spec.ts --workers=1
 ```
 
 ## How to evaluate this submission

@@ -2,8 +2,7 @@ import { test } from 'fixtures/registrationFixtures';
 
 type LanguageCase = {
   name: string;
-  optionLabel?: string;
-  optionIndex?: number;
+  optionIndex: number;
   expectedParagraph: string;
 };
 
@@ -46,13 +45,13 @@ const cases: LanguageCase[] = [
   // },
 ];
 
-test.fixme('REG-P03 — Language Selection Works Correctly', async ({ languageIndividualRegistration: registration }) => {
+test.fixme('REG-P03 — Language Selection Works Correctly', async ({ languageIndividualRegistration }) => {
   // Blocked: Language label 'English' appears in the in every dropdown menu item and 6th english option breaks the session.
   // Tracking bug: internal ticket REG-1109
 
   for (const c of cases) {
     // Act
-    // await languageIndividualRegistration.selectLanguageByIndex(c.optionIndex!);
+    // await languageIndividualRegistration.selectLanguageByIndex(c.optionIndex);
   
     // Assert
     // await languageIndividualRegistration.expectMarketingParagraphText(c.expectedParagraph);

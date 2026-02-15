@@ -214,16 +214,21 @@
 ---
 
 <a id="reg-n06"></a>
-## REG-N06 — Submit Button Gating  
+## REG-N06 — Submit Button Gating
 **Priority:** P0 – Critical  
 
-**Goal:** Submit enabled only when all validation passes  
+**Goal:** Submit is always clickable; invalid/missing inputs block progress and show guidance.
 
 **Checks:**
-- Disabled with any invalid/missing field
-- Enabled only when all inputs + consent valid
+- Submit button is enabled on initial load
+- Clicking submit with any invalid/missing field:
+  - shows form-level error banner
+  - and/or shows field-level validation messages (e.g., “Required”, format errors)
+- With all inputs valid + consent checked:
+  - click submit proceeds (success toast / redirect / next onboarding step)
 
-**Reason:** Currently broken; directly blocks onboarding.
+**Reason:** Prevents user dead-ends while giving immediate feedback on what must be fixed.
+
 
 ---
 

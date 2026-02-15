@@ -46,10 +46,9 @@ The main goal is to evaluate the registration experience (Individual + Corporate
 
 ## Setup (local)
 
-### 1. Clone the repository
+### 1. Clone the repository and navigate there
 ```bash
-git clone https://github.com/FlokiPatris/PurpleTechnology.git
-cd PurpleTechnology
+git clone https://github.com/FlokiPatris/PurpleTechnology.git && cd PurpleTechnology
 ```
 
 ### 2. Install dependencies

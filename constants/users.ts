@@ -10,9 +10,3 @@ export const DEFAULT_INDIVIDUAL_USER: RegistrationFormData = {
   password: 'StrongPass123!@#$',
   acceptTerms: true,
 };
-
-export const SECOND_USER: RegistrationFormData = {
-  ...DEFAULT_INDIVIDUAL_USER,
-  email: 'jane.doe@example.com',
-  firstName: 'Jane',
-};

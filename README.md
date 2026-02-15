@@ -45,18 +45,20 @@ The main goal is to evaluate the registration experience (Individual + Corporate
 - Playwright installed via project dependencies (`@playwright/test`)
 
 ## Setup (local)
+### 1. Install Git
+https://git-scm.com/install/windows
 
-### 1. Clone the repository and navigate there
+### 2. Clone the repository and navigate there
 ```bash
 git clone https://github.com/FlokiPatris/PurpleTechnology.git && cd PurpleTechnology
 ```
 
-### 2. Install dependencies
+### 3. Install dependencies
 ```bash
 npm install
 ```
 
-### 3. Install Playwright browsers
+### 4. Install Playwright browsers
 ```bash
 npx playwright install
 ```
